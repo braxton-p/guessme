@@ -1,9 +1,15 @@
 const express = require('express');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.get('/', function (req, res) {
+// middleware to prevent search engine indexing
+app.use((req, res, next) => {
+  res.setHeader('X-Robots-Tag', 'none');
+  next();
+});
+
+app.get('/', (req, res) => {
    res.send('Hello, World!'); 
 });
 
