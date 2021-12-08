@@ -8,6 +8,7 @@
   },
   "author": "Braxton Perry",
   "license": "MIT",
+  "private": true,
   "dependencies": {
     "express": "^4.17.1"
   }
